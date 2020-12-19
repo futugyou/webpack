@@ -1,16 +1,22 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
-  const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(0)
+    const [values, setValues] = useState([])
 
-  return (
-    <div className="container">
-      hello webpack {counter} clicks
-      <button onClick={() => setCounter(counter + 1)}>
-        press
-      </button>
-    </div>
-  )
+    const handleClick = () => {
+        setCounter(counter + 1)
+        setValues(values.concat(counter))
+    }
+
+    return (
+        <div className="container">
+            hello webpack {counter} clicks
+            <button onClick={handleClick}>
+                press
+        </button>
+        </div>
+    )
 }
 
 export default App
